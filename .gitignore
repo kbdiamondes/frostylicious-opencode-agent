@@ -1,6 +1,7 @@
 # API Keys and secrets (NEVER commit these)
 api-key-rotator/keys.txt
 api-key-rotator/proxy-secret.txt
+api-key-rotator/rotator.py
 
 # Session logs (local only)
 logs/*.md
@@ -28,3 +29,6 @@ knowledge/.obsidian/
 
 # User
 user/user.txt
+
+#knowledge
+knowledge/

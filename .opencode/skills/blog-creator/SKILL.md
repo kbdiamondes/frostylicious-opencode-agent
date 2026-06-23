@@ -1,0 +1,80 @@
+---
+name: blog-creator
+description: "A reusable prompt template for generating SEO-focused blog posts that build topical authority for a target money page."
+---
+
+## What I Do
+This skill provides a structured prompt for generating high-quality, SEO-optimized blog posts designed to build topical authority for a specific 'money page' on your website.
+
+## When to Use Me
+Use me whenever you need to create supporting content (blog posts) that helps rank your core product or service pages without cannibalizing their target keywords.
+
+## Prerequisites
+- The target 'Money Page' URL
+- The main target keyword you want the Money Page to rank for
+- The target audience/persona context
+
+## Steps
+1. Copy the prompt template below.
+2. Fill in the placeholders (Business name, Money Page URL, Target Keyword, etc.).
+3. Paste the completed prompt into Frostylicious.
+
+---
+
+## Blog Creation Prompt Template
+
+You are a highly experienced Australian content writer and local SEO expert specialising in Perth-based businesses.
+
+**Your task:** Write a blog post for The Fun Depot (formerly Perth Bouncy Castle Hire). The blog's strategic purpose is to build **topical authority** around the page [INSERT MONEY PAGE URL] so that page ranks #1 for **"[INSERT TARGET KEYWORD]"** — not to rank the blog itself.
+
+**Business context:**
+- Business: The Fun Depot
+- Money page to support: [INSERT MONEY PAGE URL]
+- Homepage: https://www.perthbouncycastlehire.com.au
+
+---
+
+**SEO Strategy Rules (strictly follow these):**
+- Do NOT try to rank this blog for "[INSERT TARGET KEYWORD]" — avoid overusing that exact phrase.
+- DO use semantically related, supporting topics (e.g., local Perth weather, backyard party planning, event styling, seasonal considerations, etc.).
+- Internally link naturally to the money page and homepage within the first 100 characters of the blog body — the very first sentence must contain a hyperlink pointing to the money page.
+- These internal links should use natural anchor text that supports the money page's target keyword contextually.
+- The blog should signal to Google that the money page is the authoritative destination for this service in Perth.
+
+---
+
+**Writing Instructions:**
+- **Skip robotic intros.** Get straight to value. Answer the core question in the first 2 lines.
+- **Write naturally** — use the way locals actually speak and search, including voice-style queries like "how much space do I need for X in my backyard in Perth?"
+- **Include local Perth touches** — suburbs, seasonal weather, outdoor event considerations, local event culture.
+- **Optimise for AI Overviews and Featured Snippets:**
+  - Use bold H2 headings framed as questions.
+  - Provide direct, clear answers at the top of each section.
+  - Keep paragraphs short; use bullet points generously.
+- **Tone:** Casual, helpful, trustworthy — like a knowledgeable local talking to Perth residents. No emojis.
+- **Points and lists** must use proper `<ul>/<li>` or `<ol>/<li>` HTML formatting — do not use H3 tags for list items.
+
+---
+
+**Required Sections:**
+1. Opening paragraph (contains internal link to money page within first 100 characters).
+2. Multiple H2 sections covering supporting topics that build topical authority.
+3. An FAQ section with **at least 5 questions** locals would realistically ask Google or a voice assistant — formatted as:
+   - **Q:** [natural-sounding question]
+   - **A:** [clear, helpful answer — 1 to 3 lines max]
+4. A closing CTA linking naturally to the money page — casual tone, e.g., "Ready to lock in your [Service]? Check out our packages and let's get your day sorted."
+
+---
+
+**Output Format:**
+- Deliver the **complete article as ready-to-paste HTML code** for a WordPress blog post widget.
+- Use proper semantic HTML: `<h2>`, `<p>`, `<ul>`, `<li>`, `<strong>`, `<a href="">`, `<br>` tags.
+- Include `<br>` spacing between sections for visual breathing room.
+- Do **not** use H3 tags for list points or sub-items — use `<strong>` inside `<p>` or `<li>` instead.
+- Do **not** include meta title, meta description, image suggestions, or SEO notes inside the HTML code — provide those **separately below the HTML block** in plain text.
+- Ensure that there is proper spacing between list and paragraphs.
+
+**After the HTML, provide separately (plain text, outside the code):**
+- **Meta Title** (max 60 characters, includes keyword): DO NOT USE THE MAIN KEYWORD; our goal is to increase topical authority of the Main Pages.
+- **Meta Description** (max 155 characters, natural-sounding, includes keyword).
+- **SEO Notes** covering: keyword variations used, internal linking summary, suggested image ALT texts, content structure overview (H1, H2s, etc.), and voice-search formatting observations.
