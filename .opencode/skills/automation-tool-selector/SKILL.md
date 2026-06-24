@@ -1,15 +1,15 @@
 ---
 name: automation-tool-selector
-description: Decides which automation approach to use for a task — Chrome DevTools (CDP) for web page interaction, macOS Assistant MCP for OS-level operations, or a hybrid of both.
+description: Decides which tools to use for automation — Chrome DevTools (CDP) for web pages, bash for OS prep, and optionally macOS MCP for advanced app control.
 ---
 
 ## What I Do
 
-I analyze any task and determine the best automation tool(s) based on whether the work involves web page interaction (clicking buttons, filling forms, file uploads in a browser) or OS-level operations (app lifecycle, file system, window management, screenshots).
+I analyze any task and determine the best tools. For web interaction → **Chrome DevTools**. For OS-level prep (launch apps, find files, resize windows) → **bash**. The macOS MCP is an optional upgrade for specific advanced use cases.
 
 ## When to Use Me
 
-Every time a task involves automation that could use either Chrome DevTools or macOS Assistant. If the task is purely research (webfetch) or content creation (writing code/copy), skip me. But for any "do something" task involving the browser or OS, consult me first.
+Every time a task involves automation that mixes the browser and the operating system. If it's pure research (`webfetch`) or content creation, skip me.
 
 Trigger patterns:
 - "Upload this file to Google Drive / Dropbox / website"
@@ -17,52 +17,88 @@ Trigger patterns:
 - "Find a file and send it somewhere"
 - "Open this page and interact with it"
 - "Navigate to X and click Y"
+- "Take a screenshot and upload it"
 
 ## Steps
 
-1. **Analyze the task** — Read the user's request and identify all sub-actions.
+1. **Analyze the task** — Identify all sub-actions. Categorize each one:
 
-2. **Categorize each sub-action:**
+   | Action | Tool (Required) | macOS MCP (Optional Upgrade) |
+   |---|---|---|
+   | Click buttons, fill forms, read page content | **Chrome DevTools** | — |
+   | File upload via `<input type="file">` | **Chrome DevTools** (`setFileInputFiles` or base64 injection) | — |
+   | Navigate multi-page web flows | **Chrome DevTools** | — |
+   | Screenshot of specific page elements | **Chrome DevTools** | — |
+   | Launch/quitt/focus apps | **bash** (`open -a`, `osascript`) | `launch_app()` — more reliable PID tracking |
+   | Resize/move windows to known dimensions | **bash** (`osascript`) | `resize_window()`, `move_window()` — precise pixel control |
+   | Find files on disk | **bash** (`find`, `ls`) | `find_files()` — structured JSON return |
+   | Read file contents | **bash** (`python3 -c "..."`) | `read_file()` — built-in size/max_lines safety |
+   | Full-screen or region screenshots | **bash** (`screencapture`) | `screenshot()` — custom paths, window/region selectors |
+   | Clipboard operations | **bash** (`pbpaste`, `pbcopy`) | `get_clipboard()`, `set_clipboard()` — structured API |
+   | OS-level keyboard shortcuts | **bash** (`osascript`) | `press_key()` — Core Graphics, more reliable than AS |
+   | Window geometry queries | **bash** (`osascript`) | `get_window_geometry()` — Accessibility API, more accurate |
 
-   | If task involves... | Use |
-   |---|---|
-   | Clicking buttons/links/menus in a web page | Chrome DevTools |
-   | Filling form fields in a web page | Chrome DevTools |
-   | File upload via `<input type="file">` | Chrome DevTools (`DOM.setFileInputFiles`) |
-   | Reading/parsing page content | Chrome DevTools |
-   | Navigating multi-page web flows | Chrome DevTools |
-   | Taking screenshots of page elements | Chrome DevTools |
-   | Launching/quitting/focusing apps | macOS Assistant |
-   | Resizing/moving windows | macOS Assistant |
-   | File system operations (find, read, open) | macOS Assistant |
-   | Clipboard operations | macOS Assistant |
-   | Full-screen or region screenshots | macOS Assistant |
-   | OS-level keyboard shortcuts | macOS Assistant |
-
-3. **If hybrid** — Split the task into OS phases and web phases:
-   ```python
-   # Example: "Find a PDF and upload it to Google Drive"
-   
-   # Phase 1: macOS Assistant — Find the file
-   find_files(directory="~/Downloads", pattern="*.pdf")
-   
-   # Phase 2: macOS Assistant — Launch/prepare browser
+2. **Default to Chrome DevTools + bash** — For 90% of tasks, these two built-in tools are all you need:
+   ```
+   # bash: Find file, launch browser
+   ls ~/Downloads/*Holiday*.pdf
    open -a "Brave Browser"
-   resize_window(width=1280, height=900)
+   osascript -e 'tell app "Brave Browser" to set bounds of window 1 to {0, 0, 1280, 900}'
    
-   # Phase 3: Chrome DevTools — Web page interaction
+   # Chrome DevTools: Web interaction
    new_page(url="https://drive.google.com")
-   # ... click +New, File upload using CDP selectors
-   # DOM.setFileInputFiles to bypass native dialog
+   click(uid=1_21)  # + New button
+   click(uid=2_2)   # File upload
+   evaluate_script(function="() => { /* base64 file injection */ }")
    ```
 
-4. **Always prefer `DOM.setFileInputFiles` over file dialogs** — Chrome DevTools can set a file path directly on an `<input type="file">` element without simulating clicks or navigating native dialogs. This is significantly more reliable than any combination of coordinate clicks + AppleScript dialog navigation.
+3. **Upgrade to macOS MCP when** (see detailed use cases below).
 
-5. **Default to macOS Assistant for OS prep** — Even if the core task is web-based, use macOS Assistant to launch the browser, resize windows, and manage the desktop environment before switching to Chrome DevTools for web interaction.
+## macOS MCP Use Cases
+
+The macOS MCP is not needed for basic automation. Use it when:
+
+### 1. Reliable Input Simulation (Core Graphics vs AppleScript)
+AppleScript's `keystroke` and `click` can be flaky — sometimes they miss or the timing is off. The MCP uses **Core Graphics events** (`CGEventPost`) which is the same low-level mechanism macOS uses internally. Use it when:
+- AppleScript key combinations fail silently
+- You need pixel-perfect click coordinates
+- The timing/sequence of input events matters (e.g., drag-and-drop)
+
+### 2. Multi-App Workflows
+When you need to coordinate actions across 3+ applications:
+- Query which apps are running and their windows
+- Get precise window geometry for each
+- Move/resize for a recording or presentation layout
+- Simulate input across apps in sequence
+
+### 3. Screenshot Automation at Scale
+The MCP's `screenshot_window()` and `screenshot_region()` let you capture specific app windows or areas of the screen without manual cropping. Use for:
+- Automated documentation generation
+- Bug reporting (capture error states)
+- Social media content at scale
+
+### 4. Accessibility Tree Exploration
+The MCP can query what UI elements are on screen via the Accessibility API. This is useful for:
+- Reading text from apps that don't have accessibility support
+- Finding UI elements by role/label (future feature)
+- Understanding what's visible when screenshots aren't available
+
+### 5. Clipboard Automation Pipelines
+Read from clipboard → process → write back. Example: capture selected text from any app, process it, paste it back. The MCP's clipboard tools are simpler than `pbpaste`/`pbcopy` for this because they integrate with the rest of the MCP workflow.
+
+### 6. Security-Constrained Automation
+If you need to:
+- Restrict which apps can be automated (allow-list)
+- Block destructive key combinations
+- Require user confirmation before actions
+- Limit text input length
+
+### 7. When AppleScript Fails
+Some apps don't respond to AppleScript. The MCP's Accessibility API and Core Graphics input can work where AppleScript can't. If `osascript` gives you `execution error`, try the MCP.
 
 ## Tips
 
-- **Don't fight the tool** — If you're doing 3+ blind coordinate clicks in macOS Assistant to hit a web button, you should have switched to Chrome DevTools 2 steps ago.
-- **The file dialog is the danger zone** — Native file dialogs triggered by web pages (like Google Drive upload) are notoriously unreliable with coordinate-based clicking. Use CDP `DOM.setFileInputFiles` or keyboard shortcuts (like `Ctrl+C then U` in Google Drive).
-- **CDP requires the page to be open** — Launch the browser with macOS Assistant first, then use CDP on the same browser instance.
-- **CDP can't find files** — macOS Assistant's `find_files` is better for locating files on disk. Use it in Phase 1, pass the path to CDP in Phase 3.
+- **You don't need the macOS MCP for most tasks.** bash + Chrome DevTools covers ~90% of use cases, including the Google Drive upload workflow.
+- **Don't fight the tool** — If you're doing 3+ blind coordinate clicks to hit a web button, switch to Chrome DevTools 2 steps ago.
+- **The file dialog is the danger zone** — Always use CDP `setFileInputFiles` or base64 injection for browser file uploads. Never navigate the macOS file dialog.
+- **CDP can't find files** — Use bash `find` or `ls` then pass the path to CDP.
