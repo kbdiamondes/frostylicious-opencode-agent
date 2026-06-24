@@ -24,6 +24,11 @@
 	  "type": "local",
 	  "command": ["npx", "-y", "chrome-devtools-mcp@latest", "--autoConnect"],
 	  "enabled": true
+	},
+	"macos-sys-assist": {
+	  "type": "local",
+	  "command": ["/Users/keithdoesmedia/Documents/Programming/frostylicious-opencode-agent/.macos-sys-assist/run.sh"],
+	  "enabled": true
 	}
   }
 }
