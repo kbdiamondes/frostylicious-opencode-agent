@@ -117,3 +117,30 @@ Format:
 - **Outcome:** Google Drive upload succeeded on first hybrid attempt (bash + CDP). macOS MCP was not needed for this task.
 - **Key Insight:** The macOS MCP is a **nice-to-have** for advanced scenarios, not a requirement for basic automation. bash does everything the MCP does for common OS operations.
 - **Confirmed by User:** Yes (user confirmed this corrected framework)
+
+### 2026-06-25 Lucky Orange Billing Discrepancy Investigation
+- **Task:** Investigate why the monthly Lucky Orange bill increased from $854 (Feb) to $1,031 (June).
+- **Approach:** Researched Lucky Orange pricing models, identified common causes for billing spikes (traffic-based tiering, add-ons, annual-to-monthly switch).
+- **Tools Used:** `webfetch`, `task` (general agent).
+- **Key Steps:**
+```
+1. Identified Lucky Orange uses usage-based (session) tiering.
+2. Verified that exceeding session limits triggers auto-scaling to higher tiers.
+3. Identified other potential cost drivers: additional websites, extended data storage, or expiration of annual contract discounts.
+```
+- **Outcome:** Provided the user with a list of likely causes and actionable steps (check dashboard, review session reports, contact support).
+- **Confirmed by User:** No
+
+### [2026-06-26] Screen Layout Before Chrome DevTools
+- **Task:** Arrange Chrome and OpenCode side-by-side before using Chrome DevTools
+- **Approach:** Use macOS assistant tools to resize and position windows so user can watch work
+- **Tools Used:** macos-sys-assist_get_displays, macos-sys-assist_get_window_geometry, macos-sys-assist_move_window, macos-sys-assist_resize_window, chrome-devtools
+- **Key Steps:**
+  1. Get display info with `get_displays`
+  2. Get OpenCode window geometry with `get_window_geometry`
+  3. Get Chrome window PID (from `list_pages` or process)
+  4. Resize and move Chrome to right half of screen
+  5. Resize and move OpenCode to left half of screen
+  6. Proceed with Chrome DevTools task
+- **Outcome:** User can watch Frostylicious work in real-time
+- **Confirmed by User:** Yes
