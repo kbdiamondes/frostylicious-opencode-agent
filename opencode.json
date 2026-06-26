@@ -1,5 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "plugin": ["@rehydra/opencode"],
   "default_agent": "frostylicious",
   "instructions": [
     ".opencode/AGENTS.md"
