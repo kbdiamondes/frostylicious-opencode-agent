@@ -4,10 +4,11 @@
 
 # Frostylicious — AI Research & Automation Assistant
 
-**A research-first AI agent for [OpenCode Desktop](https://opencode.ai) with webfetch-first research, Chrome DevTools for interactive tasks, a growing knowledge base, and auto-created skills.**
+**A research-first AI agent for [OpenCode Desktop](https://opencode.ai) with webfetch-first research, Chrome DevTools for interactive tasks, macOS MCP for screen control, MarketerOS automation, a growing knowledge base, and auto-created skills.**
 
 [![OpenCode](https://img.shields.io/badge/OpenCode-Desktop-FF6B9D?style=for-the-badge)](https://opencode.ai)
 [![Chrome DevTools MCP](https://img.shields.io/badge/Chrome_DevTools-MCP-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://www.npmjs.com/package/chrome-devtools-mcp)
+[![macOS MCP](https://img.shields.io/badge/macOS-MCP-000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/nicholasgriffintn/macos-mcp)
 
 ---
 
@@ -27,6 +28,8 @@ Frostylicious is a general-purpose AI assistant that runs inside [OpenCode Deskt
 
 - **Webfetch-first research** — fast lookups without opening browser tabs. Escalates to Chrome DevTools when pages need JS rendering or interaction.
 - **Full browser control** — navigates, clicks, fills forms, extracts data, takes screenshots via Chrome DevTools with AutoConnect
+- **macOS MCP** — controls screen layout, moves/resizes windows, takes screenshots. Puts Chrome and OpenCode side-by-side so you can watch work in real-time
+- **MarketerOS automation** — operates your MarketerOS dashboard (os.keithdoesmarketing.com) via Chrome DevTools. Create clients, manage tasks, update launches, edit SOPs — all through chat with auto-login
 - **@explore subagent** — searches the knowledge base before every task, returning only relevant context to save tokens
 - **Mandatory skill check** — always checks for existing skills before executing multi-step tasks
 - **Self-improving** — auto-creates reusable skills for novel workflows, logs verified workflows
@@ -45,6 +48,8 @@ Frostylicious is a general-purpose AI assistant that runs inside [OpenCode Deskt
 | **Content & Social** | Draft posts, browse feeds, research trends, manage content |
 | **Technical Debugging** | Inspect DOM, check console errors, test CSS/JS fixes, performance audits |
 | **Admin Tasks** | Navigate dashboards, manage settings, export data, process workflows |
+| **macOS Control** | Move/resize windows, arrange side-by-side layouts, take screenshots |
+| **MarketerOS** | Create clients, manage tasks, update launches, edit SOPs, auto-login |
 
 ---
 
@@ -118,15 +123,22 @@ On first message, Frostylicious will ask your name and save it for future sessio
 │  └──────┬───────┘  └────────────┘  │   Search)        │  │
 │         │                          └──────────────────┘  │
 │  ┌──────▼────────────────┐  ┌──────────────────────────┐  │
-│  │  Chrome DevTools MCP  │  │  Skills (Auto-grow)      │  │
-│  │  (AutoConnect)        │  │  Verified Workflows      │  │
-│  └──────┬────────────────┘  └──────────────────────────┘  │
-└─────────┼────────────────────────────────────────────────┘
-          │
-   ┌──────▼──────────────┐     ┌───────────────────────┐
-   │  Your Chrome Browser │     │  webfetch             │
-   │  (Interactive tasks)  │     │  (Default research)   │
-   └──────────────────────┘     └───────────────────────┘
+│  │  Chrome DevTools MCP  │  │  macOS MCP               │  │
+│  │  (Browser control)    │  │  (Screen layout)         │  │
+│  └──────┬────────────────┘  └──────────┬───────────────┘  │
+│         │                              │                  │
+│  ┌──────▼──────────────────────────────▼───────────────┐  │
+│  │  Skills (Auto-grow)                                  │  │
+│  │  • marketeros-automation (os.keithdoesmarketing.com) │  │
+│  │  • screen-layout (side-by-side windows)              │  │
+│  │  • Verified Workflows                                │  │
+│  └─────────────────────────────────────────────────────┘  │
+└────────────────────────────────────────────────────────────┘
+           │                              │
+    ┌──────▼──────────────┐     ┌─────────▼─────────────┐
+    │  Your Chrome Browser │     │  macOS Window Manager  │
+    │  (MarketerOS, etc.)  │     │  (Arrange windows)     │
+    └──────────────────────┘     └───────────────────────┘
 ```
 
 ### Task Flow
