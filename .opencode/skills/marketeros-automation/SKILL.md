@@ -20,23 +20,51 @@ I operate MarketerOS (the SOP Dashboard) via Chrome DevTools. I can create clien
 ## Prerequisites
 
 1. **MarketerOS must be open in Chrome** — check with `list_pages`
-2. **User must be logged in** — verify before any operation
+2. **Credentials stored** — `.env` file with `MARKETEROS_EMAIL` and `MARKETEROS_PASSWORD`
 3. **Screen layout** — use macOS assistant to arrange windows first (per screen-layout skill)
 
 ## Steps
 
-### Step 1: Check Login Status
+### Step 1: Check Login Status & Auto-Login
 
 ```
 1. chrome-devtools_list_pages → find MarketerOS tab
 2. chrome-devtools_take_snapshot → check for login modal or dashboard
-3. If login modal visible → ASK USER to log in manually
-4. If dashboard visible → proceed
+3. If logged in → proceed to Step 2
+4. If login modal visible → auto-login:
+   a. Read credentials from .env file
+   b. Find email input → fill with MARKETEROS_EMAIL
+   c. Find password input → fill with MARKETEROS_PASSWORD
+   d. Click "Sign In" button
+   e. Wait for dashboard to load
+   f. Verify login successful
 ```
 
 **Login detection:**
 - Login modal: `<div class="modal-overlay active">` with sign-in form
 - Logged in: Sidebar visible with navigation items
+
+**Reading .env credentials:**
+```bash
+# From project root
+cat .env | grep MARKETEROS_EMAIL | cut -d '=' -f2
+cat .env | grep MARKETEROS_PASSWORD | cut -d '=' -f2
+```
+
+**Auto-login flow:**
+1. Use `evaluate_script` to fill email field:
+   ```js
+   document.querySelector('input[type="email"], input[placeholder*="email"]').value = 'EMAIL_HERE'
+   document.querySelector('input[type="email"], input[placeholder*="email"]').dispatchEvent(new Event('input'))
+   ```
+2. Use `evaluate_script` to fill password field:
+   ```js
+   document.querySelector('input[type="password"]').value = 'PASSWORD_HERE'
+   document.querySelector('input[type="password"]').dispatchEvent(new Event('input'))
+   ```
+3. Click sign-in button via snapshot UID
+4. Wait 2-3 seconds for redirect
+5. Take snapshot to verify dashboard loaded
 
 ### Step 2: Navigate to Target Page
 
