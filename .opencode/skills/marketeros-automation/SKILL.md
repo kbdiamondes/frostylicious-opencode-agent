@@ -19,13 +19,21 @@ I operate MarketerOS (the SOP Dashboard) via Chrome DevTools. I can create clien
 
 ## Prerequisites
 
-1. **MarketerOS must be open in Chrome** — check with `list_pages`
+1. **MarketerOS URL:** `https://os.keithdoesmarketing.com`
 2. **Credentials stored** — `.env` file with `MARKETEROS_EMAIL` and `MARKETEROS_PASSWORD`
 3. **Screen layout** — use macOS assistant to arrange windows first (per screen-layout skill)
 
 ## Steps
 
-### Step 1: Check Login Status & Auto-Login
+### Step 1: Open MarketerOS (if not already open)
+
+```
+1. chrome-devtools_list_pages → find MarketerOS tab
+2. If not found → chrome-devtools_new_page with url: https://os.keithdoesmarketing.com
+3. If found → select_page to bring it to focus
+```
+
+### Step 2: Check Login Status & Auto-Login
 
 ```
 1. chrome-devtools_list_pages → find MarketerOS tab
@@ -165,6 +173,7 @@ After each operation:
 
 ## Tips
 
+- **Always use URL:** `https://os.keithdoesmarketing.com` when opening MarketerOS
 - **Always check login first** — don't assume user is logged in
 - **Use snapshots over screenshots** — faster, gives element UIDs for clicking
 - **Verify after each action** — take snapshot to confirm changes
