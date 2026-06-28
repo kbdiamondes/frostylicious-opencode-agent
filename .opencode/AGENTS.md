@@ -99,7 +99,7 @@ Each call starts a fresh session — include all context each time.
 1. **Understand** — Read the user's request. If unclear, ask clarifying questions.
 2. **Research (if needed)** — Use `webfetch` to gather information. Escalate to Chrome DevTools if webfetch returns unusable content. Cross-reference multiple sources.
 3. **Consult Explore (MANDATORY)** — Call `@explore` with your task context. Get verified workflows and relevant knowledge.
-4. **Check Skills (MANDATORY)** — Run `ls .opencode/skills/` and read any skill SKILL.md that matches the task or Explore's findings. You decide whether a skill applies and which one to use. You must always list and check — even if you think none match.
+4. **Check Skills (MANDATORY)** — Consult the **Skill Catalog** below. Find the skill whose description best matches the task. Use the `skill` tool to load it (e.g., `skill(ab-testing)`). Read its SKILL.md instructions before proceeding. You must always check — even if you think none match. If no skill matches, proceed without one.
 5. **Execute** — Perform the task: research synthesis, web automation, code writing, data extraction, analysis, or whatever's needed. Use Chrome DevTools for interactive web tasks.
 6. **Version bump** — Before the final commit, bump `APP_VERSION` in `js/version.js` (if the project has one). Check `.opencode/knowledge/version-format.md` for the versioning scheme. Every user-facing change needs a version bump — this is NOT optional.
 7. **Verify** — Double-check your work. For web tasks, screenshot to confirm. For data, spot-check accuracy. For code, test it. If something's wrong, fix it before presenting.
@@ -142,11 +142,114 @@ Each call starts a fresh session — include all context each time.
 
 ---
 
-## Skills
+## Skills — 📋 Skill Catalog
 
 Skills live in `.opencode/skills/<name>/SKILL.md`. **Always check in Phase 4** — this is not optional.
 
 **Auto-create** after non-trivial work — see Phase 10 for template and naming rules. Check existing skills first to avoid duplicates. Don't ask — just do it and notify the user.
+
+### 🔍 How to Use This Catalog
+1. Read the user's task
+2. Find the matching category and skill below
+3. Load it with `skill(<name>)` (e.g., `skill(cro)`)
+4. Follow its instructions
+
+---
+
+### 🎯 Marketing — Acquisition & Advertising
+| Skill | Description |
+|---|---|
+| `ads` | Paid advertising campaigns (Google Ads, Meta, LinkedIn, Twitter/X). Strategy, targeting, bidding, optimization. |
+| `ad-creative` | Generate/iterate ad creative at scale — headlines, descriptions, primary text for any paid platform. |
+| `cold-email` | B2B cold emails and follow-up sequences. Subject lines, personalization, multi-touch sequences. |
+| `prospecting` | Find, qualify, and build prospect lists — B2B SaaS, general B2B, local businesses. |
+| `directory-submissions` | Submit products to startup/SaaS/AI/directory sites for backlinks, DR, and discovery. |
+| `public-relations` | Earned media, press coverage, journalist outreach, newsjacking, HARO/Qwoted. |
+| `co-marketing` | Find partners, plan joint campaigns, brainstorm partnership opportunities. |
+| `social` | Social media content creation, scheduling, short-form video scripts, social listening. |
+| `community-marketing` | Build/leverage online communities (Discord, Slack, subreddit). Community-led growth, ambassador programs. |
+
+### 🎯 Marketing — Content & SEO
+| Skill | Description |
+|---|---|
+| `seo-audit` | Full SEO audit — technical, on-page, Core Web Vitals, crawling/indexing issues, traffic drops. |
+| `ai-seo` | Optimize content for AI search engines — AI Overviews, ChatGPT, Perplexity, Claude, Gemini. |
+| `programmatic-seo` | Create SEO-driven pages at scale using templates and data (pSEO). |
+| `schema` | Add/fix/optimize schema markup and structured data (JSON-LD, rich snippets). |
+| `content-strategy` | Plan content strategy, topic clusters, editorial calendar, content roadmap. |
+| `copywriting` | Write/rewrite marketing copy for any page — homepage, landing, pricing, feature, about. |
+| `copy-editing` | Edit/review/improve existing marketing copy. Refresh outdated content. |
+| `blog-creator` | SEO-focused blog posts that build topical authority for target money pages. |
+| `competitors` | Create competitor comparison/alternative pages (vs pages, battle cards). |
+| `competitor-profiling` | Research/profile/analyze competitors from URLs. Structured competitor dossiers. |
+| `site-architecture` | Plan site hierarchy, navigation, URL structure, internal linking, information architecture. |
+
+### 🎯 Marketing — Conversion & Retention
+| Skill | Description |
+|---|---|
+| `cro` | Conversion rate optimization for any page — landing pages, pricing, forms, homepages. |
+| `signup` | Optimize signup/registration/account creation/trial activation flows. |
+| `onboarding` | Post-signup onboarding, user activation, first-run experience, time-to-value. |
+| `churn-prevention` | Reduce churn — cancel flows, save offers, dunning, failed payment recovery. |
+| `paywalls` | In-app paywalls, upgrade screens, upsell modals, feature gates. |
+| `popups` | Popups, modals, overlays, slide-ins, banners for conversion (exit intent, email capture). |
+| `pricing` | Pricing decisions, packaging, monetization strategy, tiers, freemium, value metrics. |
+| `offers` | Offer design — value stacking, bonuses, guarantees, scarcity, naming, payment structure. |
+| `ab-testing` | Plan/design/implement A/B tests and experimentation programs. |
+
+### 🎯 Marketing — Email, SMS & CRM
+| Skill | Description |
+|---|---|
+| `emails` | Email sequences, drip campaigns, lifecycle emails, automated flows. |
+| `sms` | SMS/MMS marketing — welcome flows, abandoned cart, post-purchase, win-back. |
+| `revops` | Revenue operations — lead lifecycle, MQL/SQL, marketing-to-sales handoff, CRM automation. |
+| `sales-enablement` | Sales collateral — pitch decks, one-pagers, objection handling, demo scripts. |
+| `analytics` | Analytics tracking — GA4, GTM, conversion tracking, event tracking, attribution. |
+
+### 🎯 Marketing — Strategy & Research
+| Skill | Description |
+|---|---|
+| `marketing-plan` | Comprehensive marketing plan (AARRR structure) — 13 sections, full marketing ops stack. |
+| `marketing-ideas` | Brainstorm marketing ideas, strategies, and growth tactics for SaaS/software. |
+| `marketing-psychology` | Apply psychological principles, mental models, behavioral science to marketing. |
+| `customer-research` | Customer/ICP research — interviews, surveys, review mining, Reddit/G2 analysis, personas. |
+| `product-marketing` | Create/update product marketing context (positioning, ICP, audience). **Use first** before other skills. |
+| `lead-magnets` | Create/plan lead magnets — ebooks, checklists, templates, gated content. |
+| `free-tools` | Plan/evaluate/build free tools for marketing — calculators, graders, generators. |
+| `launch` | Product launch strategy — Product Hunt, GTM, waitlists, feature releases. |
+| `referrals` | Referral/affiliate/ambassador programs and word-of-mouth strategy. |
+| `aso` | App Store Optimization — audit/optimize App Store and Google Play listings. |
+
+### 🎨 Creative — Images & Video
+| Skill | Description |
+|---|---|
+| `image` | Create/generate/edit/optimize images — blog heroes, social graphics, product mockups, OG images. |
+| `video` | Create/generate/produce video content — AI video, Remotion, avatars, explainers. |
+
+---
+
+### 🎨 UI/UX Design
+| Skill | Description |
+|---|---|
+| `ui-ux-pro-max` | Full UI/UX design intelligence — 50+ styles, 161 color palettes, 57 font pairings, 99 UX guidelines across 10 stacks (React, Next.js, Vue, SwiftUI, Flutter, Tailwind, shadcn/ui, HTML/CSS). |
+| `design` | Comprehensive design — brand identity, 55 logo styles, 50-deliverable CIP, 22 banner styles, 15 icon styles. |
+| `brand` | Brand voice, visual identity, messaging frameworks, asset management, style guides. |
+| `design-system` | Token architecture (primitive→semantic→component), CSS variables, spacing/typography scales, component specs. |
+| `ui-styling` | Beautiful accessible UIs with shadcn/ui + Tailwind CSS. Dialogs, forms, tables, dark mode, responsive. |
+| `banner-design` | Banners for social media, ads, website heroes, print. 22 styles across all platforms. |
+| `slides` | Strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas. |
+
+---
+
+### 🛠 Technical & Automation
+| Skill | Description |
+|---|---|
+| `automation-tool-selector` | Decides CDP vs bash vs macOS tools for multi-step automation tasks. |
+| `marketeros-automation` | Operate MarketerOS via Chrome DevTools — CRUD on clients, tasks, launches, SOPs. |
+| `macos-automation` | Control macOS windows, apps, and input through Accessibility APIs. |
+| `macos-mcp-server` | Build custom MCP servers for macOS system-level automation. |
+| `screen-layout` | Arrange Chrome and OpenCode side-by-side before Chrome DevTools tasks. |
+| `version-notification` | Add version-aware update notification — auto site title, localStorage detection, "What's New" modal. |
 
 ---
 
