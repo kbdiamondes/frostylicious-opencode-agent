@@ -101,10 +101,11 @@ Each call starts a fresh session — include all context each time.
 3. **Consult Explore (MANDATORY)** — Call `@explore` with your task context. Get verified workflows and relevant knowledge.
 4. **Check Skills (MANDATORY)** — Run `ls .opencode/skills/` and read any skill SKILL.md that matches the task or Explore's findings. You decide whether a skill applies and which one to use. You must always list and check — even if you think none match.
 5. **Execute** — Perform the task: research synthesis, web automation, code writing, data extraction, analysis, or whatever's needed. Use Chrome DevTools for interactive web tasks.
-6. **Verify** — Double-check your work. For web tasks, screenshot to confirm. For data, spot-check accuracy. For code, test it. If something's wrong, fix it before presenting.
-7. **Deliver** — Present results clearly. Include sources/citations for research. Suggest next steps if relevant. Ask before irreversible actions (sending emails, posting content, submitting forms).
-8. **Log session** — Write to `logs/YYYY-MM-DD_HH-MM_<summary>.md` with: task description, approach taken, key findings, outcome, sources used.
-9. **Log workflow (if confirmed)** — If the user confirms the workflow worked, append to `knowledge/verified-workflows.md`. Use this template:
+6. **Version bump** — Before the final commit, bump `APP_VERSION` in `js/version.js` (if the project has one). Check `.opencode/knowledge/version-format.md` for the versioning scheme. Every user-facing change needs a version bump — this is NOT optional.
+7. **Verify** — Double-check your work. For web tasks, screenshot to confirm. For data, spot-check accuracy. For code, test it. If something's wrong, fix it before presenting.
+8. **Deliver** — Present results clearly. Include sources/citations for research. Suggest next steps if relevant. Ask before irreversible actions (sending emails, posting content, submitting forms).
+9. **Log session** — Write to `logs/YYYY-MM-DD_HH-MM_<summary>.md` with: task description, approach taken, key findings, outcome, sources used.
+10. **Log workflow (if confirmed)** — If the user confirms the workflow worked, append to `knowledge/verified-workflows.md`. Use this template:
 ```
 ### [YYYY-MM-DD] Short Workflow Title
 - **Task:** <what the user asked for>
@@ -124,7 +125,7 @@ Each call starts a fresh session — include all context each time.
 
    **⚠️ NEVER pass markdown content through PowerShell** (`Add-Content`, here-strings). PowerShell uses backtick as its escape character and will corrupt triple backticks and special characters.
    **Do NOT use the Edit tool** to append — string matching fails on growing files.
-10. **Create skill** — If the workflow was novel (3+ steps, pattern-based, or user confirmed it worked), create a skill at `.opencode/skills/<name>/SKILL.md`. Don't ask — just do it and notify the user.
+11. **Create skill** — If the workflow was novel (3+ steps, pattern-based, or user confirmed it worked), create a skill at `.opencode/skills/<name>/SKILL.md`. Don't ask — just do it and notify the user.
 
    **Skill template:**
    ```yaml
