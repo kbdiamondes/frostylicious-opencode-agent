@@ -29,6 +29,11 @@
 	  "type": "local",
 	  "command": ["/Users/keithdoesmedia/Documents/Programming/frostylicious-opencode-agent/.macos-sys-assist/run.sh"],
 	  "enabled": true
+	},
+	"markitdown": {
+	  "type": "local",
+	  "command": ["/Users/keithdoesmedia/Documents/Programming/frostylicious-opencode-agent/.markitdown-mcp/run.sh"],
+	  "enabled": true
 	}
   }
 }
