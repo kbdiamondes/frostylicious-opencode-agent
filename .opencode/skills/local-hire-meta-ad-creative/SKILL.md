@@ -13,6 +13,7 @@ Generate high-performing Meta ad creatives for local hire businesses following a
 - Iterating on existing ad copy based on performance data
 - Generating multiple creative variations at scale
 - Any business that delivers, sets up, and packs down equipment for events
+- User needs help developing creative angles from scratch
 
 ## Winning Format Reference
 
@@ -89,6 +90,29 @@ Generate high-performing Meta ad creatives for local hire businesses following a
 | 3 | Fun for All Ages | Primary through high school |
 
 ## Steps
+
+### Step 0: Gather Creative Angle (MANDATORY)
+
+**Before generating any ad copy, always ask the user:**
+
+1. Do you have an existing creative angle or theme for this ad?
+2. What's the goal? (leads, bookings, awareness, event registration)
+3. Who's the target audience? (schools, sports clubs, corporate, parents, event planners)
+4. What's the location? (city, region, or nationwide)
+
+**If YES → Use their angle and proceed to Step 1.**
+
+**If NO → Generate 3-5 creative angles based on their inputs:**
+
+| Goal | Audience | Suggested Angles |
+|------|----------|------------------|
+| Leads/Bookings | Schools | Effortless Execution, Staff Appreciation, Budget Friendly |
+| Leads/Bookings | Sports Clubs | Action-Packed, Competition Mode, Reliable & Professional |
+| Leads/Bookings | Corporate | Premium Experience, All-in-One, Stress-Free |
+| Leads/Bookings | Parents | Fun for All Ages, Safe & Supervised, Birthday Special |
+| Awareness | General | Local & Trusted, Last Minute, What Sets Us Apart |
+
+Present angles to user, let them pick or combine, then proceed to Step 1.
 
 ### Step 1: Read the Winning Format
 ```
