@@ -187,36 +187,35 @@ Example:
 utm_source=facebook&utm_medium=paid&utm_campaign=tfd_july_school&utm_content=school_creative_1
 ```
 
-### Step 9: Generate CSV Output (MANDATORY)
+### Step 9: Save to CSV
 
-**Always generate a CSV file with all creatives for easy copy-paste into spreadsheets.**
-
-**Output Location:** `knowledge/[ClientName]/Ads/[ClientName]_[Month]_[Year]_AdCreatives.csv`
+Save all creatives to a CSV file in a dedicated folder:
+```
+knowledge/TheFunDepot/Ads/[Month]_[Year]_Creatives/TFD_[Month]_[Year]_MetaAds_Creatives.csv
+```
 
 **CSV Columns:**
+- Element (Primary Text, Headline, Description, H1 Image Text, H2 Image Text, CTA, Ad Type, Campaign, UTM Source, UTM Medium, UTM Campaign, UTM Content, Visual Direction, Status)
+- One column per creative
+
+**Folder Structure:**
 ```
-Product Category,Angle,Media Type,Primary Text,Headline,Description,H1 Image Text,H2 Image Text,CTA (Image),Visual Direction,UTM Tracking
+knowledge/TheFunDepot/Ads/
+├── July2026_Creatives/
+│   └── TFD_July2026_MetaAds_Creatives.csv
+├── August2026_Creatives/
+│   └── TFD_August2026_MetaAds_Creatives.csv
+└── ...
 ```
 
-**Steps:**
-1. Create the CSV file with all creatives
-2. Place it in the client's Ads folder under knowledge
-3. Present the table format to the user
-4. Confirm the CSV file location for download
-
-**Example CSV Row:**
-```csv
-School,Effortless Execution,Image,"Planning a school event in Perth shouldn't mean juggling multiple suppliers...",Stress-Free School Events Perth,One team. Full setup. Zero hassle.,Planning a school event in Perth?,We handle delivery setup and pack down so your team can relax.,Check Availability,Clean event setup...,utm_source=facebook&utm_medium=paid&utm_campaign=tfd_july_school&utm_content=school_effortless_execution
-```
+Each month gets its own folder to keep creatives organized and version-controlled.
 
 ## Output Format
-
-### Table Format (for review)
 
 Present each creative in this structure:
 
 ```
-## Creative [#]: [Angle Name] — [Media Type]
+## Creative [#]: [Angle Name]
 
 **Primary Text:**
 [3-4 sentences]
@@ -224,10 +223,10 @@ Present each creative in this structure:
 **Headline:** [40 chars max]
 **Description:** [30 chars max]
 
-**H1 Image Text:** [Question with local area]
+**H1 Image Text:** [Question with Perth/WA]
 **H2 Image Text:** [Supporting detail]
 
-**CTA:** [Check Availability / Get Quote / etc.]
+**CTA:** [Get Quote / Learn More / etc.]
 
 **Visual Direction:**
 [Description of image/video to create]
@@ -235,15 +234,6 @@ Present each creative in this structure:
 **UTM Tracking:**
 utm_source=facebook&utm_medium=paid&utm_campaign=[campaign]&utm_content=[creative_name]
 ```
-
-### CSV File (for copy-paste)
-
-**Always generate a CSV file** and place it in the client's knowledge folder:
-```
-knowledge/[ClientName]/Ads/[ClientName]_[Month]_[Year]_AdCreatives.csv
-```
-
-The CSV allows easy import into Google Sheets, Meta Ads Manager, or any spreadsheet tool.
 
 ## Tips
 
