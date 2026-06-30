@@ -198,6 +198,12 @@ knowledge/TheFunDepot/Ads/[Month]_[Year]_Creatives/TFD_[Month]_[Year]_MetaAds_Cr
 - Element (Primary Text, Headline, Description, H1 Image Text, H2 Image Text, CTA, Ad Type, Campaign, UTM Source, UTM Medium, UTM Campaign, UTM Content, Visual Direction, Status)
 - One column per creative
 
+**⚠️ CRITICAL: CSV Formatting Rules**
+- **ALL fields MUST be wrapped in double quotes** — even if they don't contain commas
+- This prevents text with commas from breaking column separation
+- Example: `"One team. Full setup. Zero hassle."` NOT `One team. Full setup. Zero hassle.`
+- Every single cell in the CSV must start and end with `"`
+
 **Folder Structure:**
 ```
 knowledge/TheFunDepot/Ads/
@@ -253,3 +259,24 @@ utm_source=facebook&utm_medium=paid&utm_campaign=[campaign]&utm_content=[creativ
 - Sports LP drives 80% of leads — prioritize Sports creatives
 - SC_Creative18 wasted 65.7% of budget — avoid generic angles
 - "Check Availability" outperformed "Get Quote"
+
+### ⚠️ IMPORTANT: Inflatable Ban (WA Schools)
+
+**Source:** `knowledge/TheFunDepot/Ads/thefundepot-school-meta-ads-brief.md`
+
+- **Public Schools:** Banned inflatables (no indoor space, outdoor events, airflow restrictions)
+- **Private/Christian Schools:** Some can have inflatables, but majority cannot
+- **NEVER mention "inflatables" in School ad creatives**
+
+**Approved Products for School Ads:**
+- Dunk tank
+- Silent disco
+- Interactive games (mini golf, cheese cricket, tabletop games)
+- Mechanical rides (turbo tubs, Ferris wheel, chair aeroplane)
+- Laser tag
+- Foam machine
+- Pedal carts
+- High striker, catch a limb, bungee trampoline
+- Giant tennis, sumo suits, penalty shootout
+
+**Focus on:** Silent disco, laser tag, interactive games, mechanical rides as the hero products
