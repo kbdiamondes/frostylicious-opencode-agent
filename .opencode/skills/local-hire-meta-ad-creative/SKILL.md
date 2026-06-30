@@ -167,13 +167,35 @@ Structure per the winning format:
   - "From silent disco to laser tag, we set up activities that keep students engaged and smiling."
   - "We handle setup, activities, and pack down so your team can relax and enjoy the day."
 
-### Step 7: Generate Visual Direction
+### Step 7: Generate Visual Direction + Video Script (if Video)
 
+**For Image Ads:**
 Describe the image/video to create:
 - Show the activities in action
 - Show staff relaxed in background (we handle everything)
 - Bright, energetic, movement-focused
 - Show participation, not passive watching
+
+**For Video Ads (15 seconds):**
+
+Create a scene-by-scene script with 3-second intervals (5 scenes total).
+
+**CSV Format for Video Scripts:**
+```csv
+Video,Time,Scene,Visual,Voiceover (Caption)
+[Creative Name],0:00-0:03,Opening,[Visual description],[Voiceover text]
+[Creative Name],0:03-0:06,Solution,[Visual description],[Voiceover text]
+[Creative Name],0:06-0:09,Activity 1,[Visual description],[Voiceover text]
+[Creative Name],0:09-0:12,Activity 2,[Visual description],[Voiceover text]
+[Creative Name],0:12-0:15,End Card,Logo + CTA,[Voiceover text]
+```
+
+**Video Script Rules:**
+- 5 scenes x 3 seconds = 15 seconds total
+- Each scene has: Time, Scene type, Visual description, Voiceover (caption)
+- Voiceover should be natural speaking pace (130-150 words/min)
+- End Card always includes Logo + CTA
+- Save video scripts to a separate CSV: `TFD_[Month]_[Year]_VideoScripts.csv`
 
 ### Step 8: Generate UTM Tracking
 
