@@ -160,9 +160,12 @@ Structure per the winning format:
 ### Step 6: Generate H2 Image Text
 
 - Supports H1, adds detail
+- **Must be a conversational sentence, NOT brochure-like fragments**
+- Good: "We bring the gear and the team to run it so your staff can focus on the students."
+- Bad: "One team. Full setup. Zero hassle." (too robotic)
 - Examples:
-  - "We provide a full range of interactive activities and handle every detail from setup to pack down."
-  - "From laser tag to silent discos, we set up immersive activity stations that keep students engaged."
+  - "From silent disco to laser tag, we set up activities that keep students engaged and smiling."
+  - "We handle setup, activities, and pack down so your team can relax and enjoy the day."
 
 ### Step 7: Generate Visual Direction
 
