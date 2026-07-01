@@ -167,9 +167,14 @@ For each angle, generate multiple variations. Vary:
 
 Before delivering, check every piece of creative against the platform's character limits. Flag anything that's over and provide a trimmed alternative.
 
-### Step 4: Organize for Upload
+### Step 4: Output as Deliverable
 
-Present creative in a structured format that maps to the ad platform's upload requirements.
+If the ad creative is for **Meta/Facebook**, follow the `ad-creative-csv-format` skill to output as:
+
+1. **Main CSV** — elements as rows, creatives as columns, with UTM tracking parameters
+2. **Video scripts CSV** — scene-by-scene breakdown (15s format)
+
+For other platforms, present creative organized by angle with character counts.
 
 ---
 
@@ -264,14 +269,15 @@ Organize by angle, with character counts:
 2. "Connect your data sources once. Get automated reports forever. No code required." (80)
 ```
 
-### Bulk CSV Output
+### Bulk CSV Output (Meta/Facebook)
 
-When generating at scale (10+ variations), offer CSV format for direct upload:
+When generating **Meta/Facebook ad creative**, use the **`ad-creative-csv-format`** skill for the approved CSV output format:
 
-```csv
-headline_1,headline_2,headline_3,description_1,description_2,platform
-"Stop Manual Reporting","Automate in 5 Minutes","Join 10K+ Teams","Save 10+ hrs/week on reports. Start free.","Connect data sources once. Reports forever.","google_ads"
-```
+- **Columns = creatives**, rows = elements (Primary Text, Headline, Description, H1/H2 Image Text, CTA, Ad Type, Campaign, UTM columns, Video Script, Visual Direction, Status)
+- **UTM tracking columns** required by default: `UTM Source`, `UTM Medium`, `UTM Campaign`, `UTM Content`
+- **Video creatives** get a separate scene-by-scene CSV (4 scenes per 15s video)
+
+→ Run `skill(ad-creative-csv-format)` after generating creative for the exact spec.
 
 ### Iteration Report
 
@@ -360,3 +366,4 @@ node tools/clis/google-ads.js reports get --type ad_performance --date-range las
 - **ab-testing**: For structuring creative tests with statistical rigor
 - **marketing-psychology**: For psychological principles behind high-performing creative
 - **copy-editing**: For polishing ad copy before launch
+- **ad-creative-csv-format**: **Chain after this skill** — outputs generated creative as importable CSVs with UTM tracking. Mandatory for Meta/Facebook ad deliverables.
