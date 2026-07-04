@@ -8,7 +8,7 @@ description: Output all Meta/Facebook ad creative as two CSVs in the approved fo
 This skill enforces a specific CSV output format for Meta ad creative deliverables. It produces two files:
 
 1. **Main creatives CSV** — Ad elements as rows, each creative as a column. Includes UTM parameters as separate columns.
-2. **Video scripts CSV** — Breakdown of each video into scenes (Opening, Setup, Activity, End Card) with timed segments.
+2. **Video scripts CSV** — Breakdown of each video into 3 scenes (Opening, Middle, CTA) with timed segments.
 
 Use this whenever producing ad creative for any client so Keith can import directly into Google Sheets without reformatting.
 
@@ -47,7 +47,7 @@ UTM Source,facebook,facebook,...
 UTM Medium,paid,paid,...
 UTM Campaign,"[campaign_name]","[campaign_name]","[campaign_name]",...
 UTM Content,"[creative_slug]","[creative_slug]","[creative_slug]",...
-Video Script (15s),,"[script: OPEN → CUT → MONTAGE → END CARD]",...
+Video Script (10s),,"[hook → benefit → CTA]",...
 Visual Direction,"[image direction]","[image direction]","[video direction]",...
 Status,New,New,...
 ```
@@ -57,15 +57,15 @@ Status,New,New,...
 - MUST ask about the service/offer **and** assure the prospect of a good experience
 - MUST include locality: "in Perth", "across WA", or similar
 - Each creative MUST use a **different question type** — don't repeat "Looking for..." / "Want..." across all creatives
-- **Approved question patterns:**
-  - `Outcome`: "Want a [service] that [positive outcome] in Perth?"
-  - `Need`: "Need [service] for your [event] in Perth?"
-  - `Pain`: "Worried about [problem] ruining your [event]?"
-  - `Concern`: "Is [problem] threatening your [event]?"
-  - `Planning`: "Planning a [event type] in Perth?"
-  - `Looking for`: "Looking for [what they want] in Perth?"
-  - `Hosting`: "Hosting a [event type] in Perth?"
-  - `Capability`: "Can [service] handle your [event type]?"
+- **Approved question patterns** (must be tied to what the prospect WANTS, not a search query):
+  - `Outcome`: "Want a [service] that [positive outcome] in Perth?" — "wows your guests", "looks stunning on the day", "keeps your guests comfortable"
+  - `Need`: "Need [service] for your [event] in Perth?" — tied to a specific need they have
+  - `Pain`: "Worried about [problem] ruining your [event]?" — addresses their fear
+  - `Concern`: "Is [problem] threatening your [event]?" — challenges their worry
+  - `Planning`: "Planning a [event type] in Perth?" — planning stage
+  - `Hosting`: "Hosting a [event type] in Perth?" — hosting scenario
+  - `Capability`: "Can [service] handle your [event type]?" — questions capability
+- **NOT approved:** "Looking for [service] in Perth?" — this is a search query, not an outcome. Always tie to what the prospect wants to ACHIEVE or EXPERIENCE.
 - Examples: "Want a wedding marquee that wows in Perth?", "Worried about rain on your Perth wedding?", "Need your marquee set up on time in Perth?"
 - Don't assume the audience knows where the service operates — state it clearly
 
@@ -85,21 +85,21 @@ Status,New,New,...
 
 ### Step 3: Build the video scripts CSV (`{client}-video-scripts-{monthYear}.csv`)
 
-Break each video into 4 scenes per 15-second video:
+Break each video into 3 scenes per 10-second video:
 
 ```
-Video,Time,Scene,Visual,Voiceover (Caption)
-Creative_Name,0:00-0:03,Opening,[visual description],[voiceover text]
-Creative_Name,0:03-0:07,Solution/Setup,[visual description],[voiceover text]
-Creative_Name,0:07-0:12,Activity/Reveal,[visual description],[voiceover text]
-Creative_Name,0:12-0:15,End Card,[Logo + CTA overlay description],[voiceover text]
+Video,Time,Scene,Voiceover (Caption)
+Creative_Name,0:00-0:03,Opening,[short punchy hook]
+Creative_Name,0:03-0:06,Middle,[key benefit or value prop]
+Creative_Name,0:07-0:10,CTA,[brand name + action]
 ```
 
-**Scene structure for 15s video:**
-- `0:00-0:03` — Opening: hook, problem, or attention grabber
-- `0:03-0:07` — Solution/Setup: product/service introduction
-- `0:07-0:12` — Activity/Reveal: social proof, experience, or benefits
-- `0:12-0:15` — End Card: logo + CTA
+**Scene structure for 10s video (luxury style):**
+- `0:00-0:03` — Opening: short punchy hook that grabs attention
+- `0:03-0:06` — Middle: key benefit, value prop, or differentiator
+- `0:07-0:10` — CTA: brand name + clear action
+
+**Script style:** Keep it short and punchy. No long sentences. Think luxury brand copywriting.
 
 ### Step 4: Save to the client's knowledge directory
 
@@ -114,7 +114,7 @@ knowledge/{Client}/July 1/{client}-video-scripts-{monthYear}.csv
 - **Use double quotes** around cells containing commas or line breaks in the CSV.
 - **Element row names** must be exactly as shown (Primary Text, Headline, etc.) — these map to Meta Ads Manager fields.
 - **Creative names** should match the naming convention used in the ad platform. Use `SMH_` prefix for Spuds, etc.
-- **Ad Type** values: `Image` or `Video (15s)`.
+- **Ad Type** values: `Image` or `Video (10s)`.
 - **Status** column: track with `New`, `Created`, `Live`, `Paused`, etc.
 - **Visual Direction** column describes what the image or video should look like — serves as the brief for the designer/videographer.
 - The video scripts CSV is the production brief — hand it directly to a video editor.
