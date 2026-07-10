@@ -15,14 +15,27 @@ I help create client-facing ad performance reports that include CPL/CPA, CVR, co
 - When user asks "what should I tell the client?"
 - When user needs to report ad performance
 
+## Terminology (The Fun Depot)
+
+- **"Website Purchases"** in Meta = **"Quote Conversions"** in our reporting
+- TFD uses WooCommerce for quote requests (not e-commerce), so Meta's "Purchase" event actually = a quote request
+- Always relabel "Website purchases" → "Quote Conversions" in client-facing reports
+- Source of truth: `knowledge/TheFunDepot/Ads/Analysis/TFD_DailyTracking_July2026.csv`
+
 ## Steps
 
-### 1. Ask for Data Source
-Ask which platforms to pull from:
-- Meta Ads Manager
-- Google Ads (Report Editor)
-- GA4 (if tracking issues)
-- Manual verification (form entries)
+### 1. Locate Data Source
+Before analyzing, always locate the reports file and ad creatives sheet in the client's knowledge folder:
+`knowledge/[Client Name]/[Date]/`
+
+- Example: `knowledge/TheFunDepot/July9/`
+- Look for files like:
+  - `*ConversionReport*.xlsx` — Raw Meta data
+  - `*DailyTracking*.csv` — Our tracking sheet
+  - `*AdCreatives*.csv`
+  - `*audit*.md` — Previous audit notes
+
+If these aren't found, ask Keith for the correct directory path.
 
 ### 2. Pull Data (10 min)
 
@@ -116,6 +129,7 @@ Use this template:
 
 ## Benchmarks
 
+### General Benchmarks
 | Metric | Good | Average | Bad |
 |---|---|---|---|
 | **Meta CPL** | <$30 | $30-80 | >$80 |
@@ -124,8 +138,15 @@ Use this template:
 | **Google CVR** | >8% | 3-8% | <3% |
 | **Close Rate** | >20% | 10-20% | <10% |
 
+### The Fun Depot (TFD) Specific
+| Metric | Good | Average | Bad |
+|---|---|---|---|
+| **Quote Conversion CPA** | <$6 | $6-15 | >$15 |
+| **CTR** | >1.0% | 0.5-1.0% | <0.5% |
+| **CPC** | <$0.80 | $0.80-1.50 | >$1.50 |
+| **Landing Page Views** | >40% of clicks | 20-40% | <20% |
+
 ## Files to Reference
 
+- `knowledge/[Client Name]/[Date]/` — Folder containing reports & creative sheets
 - `knowledge/Client_Reporting_Workflow.md` — Full workflow guide
-- `knowledge/[Client]/Ads/*_DailyTracking_*.csv` — Daily tracking sheets
-- `knowledge/[Client]/Ads/*_CPA_Analysis_*.csv` — CPA calculations

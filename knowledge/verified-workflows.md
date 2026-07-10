@@ -144,3 +144,27 @@ Format:
   6. Proceed with Chrome DevTools task
 - **Outcome:** User can watch Frostylicious work in real-time
 - **Confirmed by User:** Yes
+
+### [2026-07-05] SaaS Product Rebrand (MarketerOS → Grovyl)
+- **Task:** Complete brand identity rebrand for v0.27.0 — rename MarketerOS to Grovyl, update color system, typography, logo, landing page, and docs
+- **Approach:** Systematic 6-step rebrand following brand guidelines
+- **Tools Used:** bash (sed for bulk find-replace), edit tool (targeted CSS/HTML updates), write tool (new favicon)
+- **Key Steps:**
+```
+1. Color system migration: Update CSS variables in index.html, base.css, loader.css
+   - Warm palette (#1a1a1e, #e8ff47) → Cool Slate (#0F172A, #10B981)
+   - Add Syne + DM Mono font imports
+
+2. Brand name replacement: sed bulk find-replace
+   find . \( -name "*.html" -o -name "*.js" -o -name "*.css" \) -exec sed -i '' 's/MarketerOS/Grovyl/g' {} +
+
+3. Favicon swap: Create new SVG with G lettermark on dark slate
+
+4. Landing page rebrand: Update hero headline, meta tags, FAQ, CTA
+
+5. Documentation sweep: sed replace across all .md files
+
+6. Version bump: Update version.js to v0.27.0
+```
+- **Outcome:** Complete rebrand from MarketerOS to Grovyl across entire codebase
+- **Confirmed by User:** Pending
