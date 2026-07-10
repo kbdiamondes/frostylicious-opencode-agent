@@ -13,11 +13,14 @@ Use me whenever you need to create supporting content (blog posts) that helps ra
 - The target 'Money Page' URL
 - The main target keyword you want the Money Page to rank for
 - The target audience/persona context
+- **MANDATORY:** Check `knowledge/TheFunDepot/Blog/blog-tracker.md` before creating any blog — this prevents duplicate topics and keywords
 
 ## Steps
-1. Copy the prompt template below.
-2. Fill in the placeholders (Business name, Money Page URL, Target Keyword, etc.).
-3. Paste the completed prompt into Frostylicious.
+1. **Check the tracker first** — Read `knowledge/TheFunDepot/Blog/blog-tracker.md` to verify the target keyword doesn't already exist
+2. Copy the prompt template below.
+3. Fill in the placeholders (Business name, Money Page URL, Target Keyword, etc.).
+4. Paste the completed prompt into Frostylicious.
+5. **Log the new blog** — After creation, add the blog title, keyword, money page, and date to `knowledge/TheFunDepot/Blog/blog-tracker.md`
 
 ---
 
