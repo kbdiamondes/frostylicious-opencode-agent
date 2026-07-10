@@ -14,6 +14,7 @@ Use me whenever you need to create supporting content (blog posts) that helps ra
 - The main target keyword you want the Money Page to rank for
 - The target audience/persona context
 - **MANDATORY:** Check `knowledge/TheFunDepot/Blog/blog-tracker.md` before creating any blog — this prevents duplicate topics and keywords
+- **MANDATORY:** Review `knowledge/TheFunDepot/Blog/seo-best-practices.md` for 2026 SEO guidelines — Information Gain, internal linking rules, and penalty avoidance
 
 ## Steps
 1. **Check the tracker first** — Read `knowledge/TheFunDepot/Blog/blog-tracker.md` to verify the target keyword doesn't already exist
@@ -91,3 +92,10 @@ You are a highly experienced Australian content writer and local SEO expert spec
 - **Meta Title** (max 60 characters, includes keyword): DO NOT USE THE MAIN KEYWORD; our goal is to increase topical authority of the Main Pages.
 - **Meta Description** (max 155 characters, natural-sounding, includes keyword).
 - **SEO Notes** covering: keyword variations used, internal linking summary, suggested image ALT texts, content structure overview (H1, H2s, etc.), and voice-search formatting observations.
+- **Pre-Publish Checklist** confirmation:
+  - [ ] Information Gain: Does this page add something current ranking pages don't have?
+  - [ ] No Cannibalization: Is this targeting a distinct intent from existing pages?
+  - [ ] Internal Links: Does this link to the pillar page and 2+ related cluster pages?
+  - [ ] Depth: Is this 1,500+ words with real substance (not fluff)?
+  - [ ] External Links: Does this include 3-5 links to other Perth resources?
+  - [ ] Helpful Content: Does this pass Google's self-assessment questions?
