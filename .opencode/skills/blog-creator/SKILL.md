@@ -18,10 +18,11 @@ Use me whenever you need to create supporting content (blog posts) that helps ra
 
 ## Steps
 1. **Check the tracker first** — Read `knowledge/TheFunDepot/Blog/blog-tracker.md` to verify the target keyword doesn't already exist
-2. Copy the prompt template below.
-3. Fill in the placeholders (Business name, Money Page URL, Target Keyword, etc.).
-4. Paste the completed prompt into Frostylicious.
-5. **Log the new blog** — After creation, add the blog title, keyword, money page, and date to `knowledge/TheFunDepot/Blog/blog-tracker.md`
+2. **Research social media for real user concerns** — Search Reddit, forums, and social media for real questions and concerns people have about the topic. Paraphrase these concerns in the blog opening to add credibility and Information Gain. This is MANDATORY for blogs with the goal of increasing topical authority.
+3. Copy the prompt template below.
+4. Fill in the placeholders (Business name, Money Page URL, Target Keyword, etc.).
+5. Paste the completed prompt into Frostylicious.
+6. **Log the new blog** — After creation, add the blog title, keyword, money page, and date to `knowledge/TheFunDepot/Blog/blog-tracker.md`
 
 ---
 
@@ -60,6 +61,7 @@ You are a highly experienced Australian content writer and local SEO expert spec
 
 **Writing Instructions:**
 - **Skip robotic intros.** Get straight to value. Answer the core question in the first 2 lines.
+- **Research real user concerns from social media** — Search Reddit, parenting forums, and community groups for real questions people ask about the topic. Paraphrase 1-2 concerns in the opening paragraph to add credibility and Information Gain. Example: "As one parent on Reddit recently asked: '[paraphrased question]'" or "As one Reddit user recently shared: '[paraphrased concern]'"
 - **Write naturally** — use the way locals actually speak and search, including voice-style queries like "how much space do I need for X in my backyard in Perth?"
 - **Include local Perth touches** — suburbs, seasonal weather, outdoor event considerations, local event culture.
 - **Include external links to relevant Perth resources** — Tourism WA, Destination Perth, Kings Park, Scitech, Perth Zoo, AGWA, City of Perth, Buggybuddys, local councils. These links demonstrate comprehensive helpfulness and avoid Google's helpful content penalty. **IMPORTANT:** Only add these outbound citations IF the goal is NOT to help a money page/homepage rank higher in Google SERP. If the goal IS to help a money page rank higher, do NOT add outbound citations — keep link equity focused on the money page.
@@ -97,6 +99,7 @@ You are a highly experienced Australian content writer and local SEO expert spec
 - **SEO Notes** covering: keyword variations used, external links summary (must include 3-5 links to other Perth resources), suggested image ALT texts, content structure overview (H1, H2s, etc.), and voice-search formatting observations.
 - **Pre-Publish Checklist** confirmation:
   - [ ] Information Gain: Does this page add something current ranking pages don't have?
+  - [ ] Social Media Research: Does this blog include paraphrased concerns from Reddit/social media to add credibility?
   - [ ] No Cannibalization: Is this targeting a distinct intent from existing pages?
   - [ ] Backlinks Check: If goal is to rank money page → backlinks to perthbouncycastlehire.com.au in first/second paragraphs are OK. If goal is NOT to rank TFD → no backlinks to perthbouncycastlehire.com.au in first/second paragraphs.
   - [ ] Outbound Citations Check: If goal is to rank money page → NO outbound citations (keep link equity focused). If goal is NOT to rank money page → include 3-5 outbound citations to relevant Perth resources.
