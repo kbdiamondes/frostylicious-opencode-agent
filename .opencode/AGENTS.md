@@ -66,6 +66,53 @@ Today's date: Day YYYY-MM-DD
 
 ---
 
+## Bug Fix Protocol
+
+**When fixing bugs, follow this checklist in order. Never skip steps.**
+
+### Step 1: Understand the Bug
+1. Re-read the complaint. What EXACTLY is broken?
+2. If unclear, ask for a screenshot FIRST — don't guess.
+3. Note the exact page/feature/element that's broken.
+
+### Step 2: Find ALL Code Paths
+```bash
+# Find every function that renders the broken element
+rg "function render" app/js/ --include="*.js"
+
+# Find every caller
+rg "brokenFunctionName" app/js/ --include="*.js"
+
+# Check for duplicate patterns across files
+rg "escHtml.*icon|innerHTML.*widget" app/js/ --include="*.js"
+```
+
+**RULE:** Never fix without finding ALL render paths. One missed path = 3+ rounds of wasted time.
+
+### Step 3: Read Full Context
+1. Read the ENTIRE file (or relevant 100-line section)
+2. Note all related CSS rules in `index.html`
+3. Check for CSS overrides
+
+### Step 4: Plan Before Fixing
+1. List every file that needs to change
+2. Describe the fix in one sentence per file
+3. Show the user: "I'll fix X in file1.js and Y in file2.js"
+
+### Step 5: Fix, Verify, THEN Commit
+1. Make ALL changes before testing
+2. Test locally if possible (start server, open page)
+3. Only THEN commit — ask "Ready to commit?" first
+
+### Anti-Patterns
+- ❌ Fix one function without checking for others
+- ❌ Push without testing locally
+- ❌ Guess what the user means
+- ❌ Make 4 small commits for 1 fix
+- ❌ Reason in circles — re-read the complaint and grep
+
+---
+
 ## Research: Webfetch First
 
 **Default method: `webfetch`** — fast, lightweight, no tab clutter.
