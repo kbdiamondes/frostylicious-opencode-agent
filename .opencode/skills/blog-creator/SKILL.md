@@ -35,14 +35,14 @@ You are a highly experienced Australian content writer and local SEO expert spec
 - Business: The Fun Depot
 - Money page to support: [INSERT MONEY PAGE URL]
 - Homepage: https://www.perthbouncycastlehire.com.au
+- **Note:** Only include backlinks to perthbouncycastlehire.com.au in the first/second paragraphs IF the goal is to increase Google ranking on SERP for a specific money page. If the goal is NOT to rank The Fun Depot's website, do NOT include these backlinks — the blogs should provide genuine value about Perth activities instead.
 
 ---
 
 **SEO Strategy Rules (strictly follow these):**
 - Do NOT try to rank this blog for "[INSERT TARGET KEYWORD]" — avoid overusing that exact phrase.
 - DO use semantically related, supporting topics (e.g., local Perth weather, backyard party planning, event styling, seasonal considerations, etc.).
-- Internally link naturally to the money page and homepage within the first 100 characters of the blog body — the very first sentence must contain a hyperlink pointing to the money page.
-- These internal links should use natural anchor text that supports the money page's target keyword contextually.
+- **Only include backlinks to perthbouncycastlehire.com.au in the first or second paragraphs IF the goal is to increase Google ranking on SERP for a specific money page.** If the goal is NOT to rank The Fun Depot's website, do NOT include these backlinks — the blogs should provide genuine value about Perth activities instead.
 - The blog should signal to Google that the money page is the authoritative destination for this service in Perth.
 
 ---
@@ -53,6 +53,7 @@ You are a highly experienced Australian content writer and local SEO expert spec
 - **The blog must be genuinely helpful to the reader**, not just a vehicle for self-promotion. Activities and information should be the primary focus; your business mention should be subtle and natural.
 - **Aim for 3-5 external links per blog** to demonstrate you're providing comprehensive, useful information about the topic — not just selling your service.
 - **Self-promotion should appear at the end**, not dominate the content. The first 80% of the blog should be pure value; the last 20% can mention your service as one option among many.
+- **Only include backlinks to perthbouncycastlehire.com.au in the first or second paragraphs IF the goal is to increase Google ranking on SERP for a specific money page.** If the goal is NOT to rank The Fun Depot's website, do NOT include these backlinks — the blogs should provide genuine value about Perth activities instead.
 
 ---
 
@@ -67,16 +68,17 @@ You are a highly experienced Australian content writer and local SEO expert spec
   - Keep paragraphs short; use bullet points generously.
 - **Tone:** Casual, helpful, trustworthy — like a knowledgeable local talking to Perth residents. No emojis.
 - **Points and lists** must use proper `<ul>/<li>` or `<ol>/<li>` HTML formatting — do not use H3 tags for list items.
+- **Only include backlinks to perthbouncycastlehire.com.au in the first or second paragraphs IF the goal is to increase Google ranking on SERP for a specific money page.** If the goal is NOT to rank The Fun Depot's website, do NOT include these backlinks — the blogs should provide genuine value about Perth activities instead.
 
 ---
 
 **Required Sections:**
-1. Opening paragraph (contains internal link to money page within first 100 characters).
+1. Opening paragraph — **Only include backlinks to perthbouncycastlehire.com.au IF the goal is to increase Google ranking on SERP for a specific money page.** If the goal is NOT to rank The Fun Depot's website, start with genuine value about the topic.
 2. Multiple H2 sections covering supporting topics that build topical authority — **these sections should primarily provide value about the topic, not promote your service**. Include external links to other Perth resources throughout.
 3. An FAQ section with **at least 5 questions** locals would realistically ask Google or a voice assistant — formatted as:
    - **Q:** [natural-sounding question]
    - **A:** [clear, helpful answer — 1 to 3 lines max]
-4. A closing CTA linking naturally to the money page — casual tone, e.g., "Ready to lock in your [Service]? Check out our packages and let's get your day sorted." **This CTA should be brief and natural; the majority of the blog should provide value, not sell.**
+4. A closing CTA — **Only include backlinks to perthbouncycastlehire.com.au IF the goal is to increase Google ranking on SERP for a specific money page.** If the goal is NOT to rank The Fun Depot's website, the blog should provide value, not sell.
 
 ---
 
@@ -91,11 +93,10 @@ You are a highly experienced Australian content writer and local SEO expert spec
 **After the HTML, provide separately (plain text, outside the code):**
 - **Meta Title** (max 60 characters, includes keyword): DO NOT USE THE MAIN KEYWORD; our goal is to increase topical authority of the Main Pages.
 - **Meta Description** (max 155 characters, natural-sounding, includes keyword).
-- **SEO Notes** covering: keyword variations used, internal linking summary, suggested image ALT texts, content structure overview (H1, H2s, etc.), and voice-search formatting observations.
+- **SEO Notes** covering: keyword variations used, external links summary (must include 3-5 links to other Perth resources), suggested image ALT texts, content structure overview (H1, H2s, etc.), and voice-search formatting observations.
 - **Pre-Publish Checklist** confirmation:
   - [ ] Information Gain: Does this page add something current ranking pages don't have?
   - [ ] No Cannibalization: Is this targeting a distinct intent from existing pages?
-  - [ ] Internal Links: Does this link to the pillar page and 2+ related cluster pages?
-  - [ ] Depth: Is this 1,500+ words with real substance (not fluff)?
+  - [ ] Backlinks Check: If goal is to rank money page → backlinks to perthbouncycastlehire.com.au in first/second paragraphs are OK. If goal is NOT to rank TFD → no backlinks to perthbouncycastlehire.com.au in first/second paragraphs.
   - [ ] External Links: Does this include 3-5 links to other Perth resources?
   - [ ] Helpful Content: Does this pass Google's self-assessment questions?
