@@ -2,7 +2,7 @@
 name: ads
 description: "When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X, or other ad platforms. Also use when the user mentions 'PPC,' 'paid media,' 'ROAS,' 'CPA,' 'ad campaign,' 'retargeting,' 'audience targeting,' 'Google Ads,' 'Facebook ads,' 'LinkedIn ads,' 'ad budget,' 'cost per click,' 'ad spend,' or 'should I run ads.' Use this for campaign strategy, audience targeting, bidding, and optimization. For bulk ad creative generation and iteration, see ad-creative. For landing page optimization, see cro."
 metadata:
-  version: 2.0.1
+  version: 2.1.0
 ---
 
 # Paid Ads
@@ -231,6 +231,36 @@ LI_LeadGen_CMOs-SaaS_Whitepaper_Mar24
 - Frequency check (fatigue risk)
 - Landing page conversion rate
 
+### Audience Segments Analysis (Meta)
+
+**Setup:** Define segments in Meta Ads Manager → Advertising Settings → Audience Segments
+- **Existing Customers:** 90-day purchasers + customer list upload
+- **Engaged Audience:** 30-day website visitors + email subscribers
+- **New Audience:** Everyone else (auto-defined)
+
+**How to read the data:**
+
+| Metric | What It Tells You | Action |
+|--------|-------------------|--------|
+| **Spend by segment** | Where your budget is actually going | If Existing > 30%, exclude from prospecting |
+| **Conversions by segment** | Who is actually buying | Find creatives that convert New Audience |
+| **CPA by segment** | True cost per new customer | Compare New CPA vs Existing CPA |
+
+**Creative Scorecard Framework:**
+
+| Creative Performance | What It Means | What To Do |
+|---------------------|---------------|------------|
+| High New + Low Existing | **Winner** — genuine acquisition | Scale aggressively |
+| High New + High Existing | Good but inefficient | Scale with exclusion |
+| Low New + High Existing | **Loser** — just retargeting | Pause in prospecting, use only in retargeting |
+| Low New + Low Existing | Failing everywhere | Pause entirely |
+
+**Key insight:** If a creative shows strong CPA but 80%+ conversions from Existing Customers, it's not acquiring new customers — it's just re-converting people who'd buy anyway. Move budget to creatives with high New Audience conversion %.
+
+**Example:**
+- Bucking Bull: 20% New, 80% Existing → Retargeting creative, pause in prospecting
+- Undercovered Bucking Bull: 70% New, 30% Existing → Acquisition creative, scale this
+
 ### Attribution Considerations
 - Platform attribution is inflated
 - Use UTM parameters consistently
@@ -254,6 +284,8 @@ Before launching campaigns, ensure proper tracking and account setup.
 - [ ] UTM parameters working
 - [ ] Budget set correctly
 - [ ] Targeting matches intended audience
+- [ ] Audience segments defined (Existing Customers, Engaged Audience)
+- [ ] Existing Customers excluded from prospecting ad sets
 
 ---
 
@@ -358,8 +390,9 @@ If any check fails, rewrite before responding. Do not ship partial RSAs.
 
 ### Targeting
 - Audiences too narrow or too broad
-- Not excluding existing customers
+- Not excluding existing customers from prospecting
 - Overlapping audiences competing
+- Not using audience segments to measure true acquisition
 
 ### Creative
 - Only one ad per ad set
