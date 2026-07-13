@@ -2,7 +2,7 @@
 name: ad-creative
 description: "When the user wants to generate, iterate, or scale ad creative — headlines, descriptions, primary text, or full ad variations — for any paid advertising platform. Also use when the user mentions 'ad copy variations,' 'ad creative,' 'generate headlines,' 'RSA headlines,' 'bulk ad copy,' 'ad iterations,' 'creative testing,' 'ad performance optimization,' 'write me some ads,' 'Facebook ad copy,' 'Google ad headlines,' 'LinkedIn ad text,' or 'I need more ad variations.' Use this whenever someone needs to produce ad copy at scale or iterate on existing ads. For campaign strategy and targeting, see ads. For landing page copy, see copywriting."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
 ---
 
 # Ad Creative
@@ -279,6 +279,28 @@ When generating **Meta/Facebook ad creative**, use the **`ad-creative-csv-format
 
 → Run `skill(ad-creative-csv-format)` after generating creative for the exact spec.
 
+### ⚠️ CRITICAL: CSV Formatting Rule
+
+**ALL values containing commas MUST be wrapped in double quotes.** This prevents columns from breaking when opened in Google Sheets or Excel.
+
+**Incorrect (breaks columns):**
+```
+H2 Image Text,We handle delivery, setup, activities, and pack down so you don't have to.
+```
+
+**Correct (columns intact):**
+```
+H2 Image Text,"We handle delivery, setup, activities, and pack down so you don't have to."
+```
+
+**Rules:**
+1. If a value contains a comma → wrap entire value in double quotes
+2. If a value contains a newline → wrap entire value in double quotes
+3. If a value contains double quotes → escape with double-double quotes (`""`)
+4. When in doubt → wrap in double quotes (safe default)
+
+**Always verify:** After writing a CSV, check that each row has the correct number of columns (commas + 1). If columns don't align, check for unquoted commas.
+
 ### Iteration Report
 
 When iterating, include a summary:
@@ -331,6 +353,7 @@ For large-scale creative production (Anthropic's growth team generates 100+ vari
 - **Iterating without data** — Gut feelings are less reliable than metrics
 - **Testing too many things at once** — Change one variable per test cycle
 - **Retiring creative too early** — Allow 1,000+ impressions before judging
+- **Not quoting CSV values with commas** — Breaks columns in Google Sheets/Excel. Always wrap values containing commas in double quotes.
 
 ---
 
