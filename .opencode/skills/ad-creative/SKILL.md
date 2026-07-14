@@ -44,6 +44,52 @@ Gather this context (ask if not provided):
 
 ---
 
+## Target Market Research (MANDATORY)
+
+**Before writing ad copy, research what events/activities your target market actually does.**
+
+Don't just use the keyword (e.g., "sports club") to describe the demographic. Search what events that target market holds during the relevant season, then speak directly to those specific events in your ad copy.
+
+### Why This Matters
+
+Generic ad copy like "Planning a sports club event?" is weak because:
+- It doesn't speak to a specific pain point
+- It doesn't reflect you understand their world
+- It blends in with every other ad
+
+Specific ad copy like "Quiz night is fun. But adding silent disco, laser tag, and foam machines? That's the night your members will talk about all season." is strong because:
+- It speaks to a specific event they're actually planning
+- It shows you understand their world
+- It stands out from generic competitors
+
+### How to Research
+
+1. **Search for events** that target market holds during the relevant season
+   - Example: "sports club events winter June July August Perth Australia"
+   - Example: "school events end of year Perth"
+   - Example: "corporate Christmas party ideas Perth"
+
+2. **Identify the specific events** they actually plan and run
+   - Quiz nights, presentation nights, gala nights, fundraisers, tournaments
+
+3. **Speak to those events** in your ad copy
+   - Don't say "sports club event" — say "quiz night" or "presentation night"
+   - Don't say "school event" — say "end-of-year celebration" or "fete"
+
+4. **Use their language** — how they talk about these events internally
+
+### Example
+
+**Before (Generic):**
+- "Planning a sports club event in Perth?"
+- "Be the Community Event Hero"
+
+**After (Specific):**
+- "Quiz night is fun. But adding silent disco, laser tag, and foam machines? That's the night your members will talk about all season."
+- "Quiz Night? Level It Up."
+
+---
+
 ## How This Skill Works
 
 This skill supports two modes:
@@ -354,6 +400,7 @@ For large-scale creative production (Anthropic's growth team generates 100+ vari
 - **Testing too many things at once** — Change one variable per test cycle
 - **Retiring creative too early** — Allow 1,000+ impressions before judging
 - **Not quoting CSV values with commas** — Breaks columns in Google Sheets/Excel. Always wrap values containing commas in double quotes.
+- **Using keywords instead of specific events** — Don't say "sports club event" — search what events sports clubs actually hold (quiz nights, presentation nights, gala nights) and speak to those specific events. Generic demographic labels = weak ad copy.
 
 ---
 
