@@ -168,3 +168,22 @@ Format:
 ```
 - **Outcome:** Complete rebrand from MarketerOS to Grovyl across entire codebase
 - **Confirmed by User:** Pending
+
+### [2026-08-05] Portfolio UI Redesign with design-taste-frontend skill
+- **Task:** Redesign portfolio UI using design-taste-frontend skill, remove EM dashes, make copy sound less AI
+- **Approach:** Loaded design-taste-frontend skill, analyzed portfolio HTML, applied skill rules systematically
+- **Tools Used:** skill tool (design-taste-frontend), edit tool, grep tool
+- **Key Steps:**
+```
+1. Load design-taste-frontend skill
+2. Remove custom cursor (cursor: none)
+3. Replace emojis with text labels
+4. Reduce eyebrow labels from 8 to 2
+5. Consolidate duplicate CTA intents
+6. Remove EM dashes from copy
+7. Shorten hero subtext to 20 words
+8. Adjust typography spacing
+9. Reduce hero top padding
+```
+- **Outcome:** Portfolio now follows design-taste-frontend rules: no custom cursors, no emojis, proper eyebrow frequency, single CTA intent, no EM dashes, direct copy, proper typography spacing
+- **Confirmed by User:** Yes
